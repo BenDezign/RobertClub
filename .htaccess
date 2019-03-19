@@ -1,0 +1,51 @@
+#SetEnv PHP_VER 5_3
+
+Options -Indexes
+Options +FollowSymlinks
+Options -MultiViews
+RewriteEngine on
+
+RewriteBase   /RobertClub/
+
+RewriteRule ^/_admin$ /_admin/index.php [L]
+RewriteRule ^/_admin/$ /_admin/index.php [L]
+#RewriteRule ^robots\.txt$ /robots.php [L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\/]+)/([^\/]+)/([^\/]+)/([^\/]+)/([^\/]+)/([^\/]+)/([^\/]+)/([^\/]+)/([^\/]+)\/?$ index.php?param1=$1&param2=$2&param3=$3&param4=$4&param5=$5&param6=$6&param7=$7&param8=$8&param9=$9 [QSA,L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\/]+)/([^\/]+)/([^\/]+)/([^\/]+)/([^\/]+)/([^\/]+)/([^\/]+)/([^\/]+)\/?$ index.php?param1=$1&param2=$2&param3=$3&param4=$4&param5=$5&param6=$6&param7=$7&param8=$8 [QSA,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\/]+)/([^\/]+)/([^\/]+)/([^\/]+)/([^\/]+)/([^\/]+)/([^\/]+)\/?$ index.php?param1=$1&param2=$2&param3=$3&param4=$4&param5=$5&param6=$6&param7=$7 [QSA,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\/]+)/([^\/]+)/([^\/]+)/([^\/]+)/([^\/]+)/([^\/]+)\/?$ index.php?param1=$1&param2=$2&param3=$3&param4=$4&param5=$5&param6=$6 [QSA,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\/]+)/([^\/]+)/([^\/]+)/([^\/]+)/([^\/]+)\/?$ index.php?param1=$1&param2=$2&param3=$3&param4=$4&param5=$5 [QSA,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\/]+)/([^\/]+)/([^\/]+)/([^\/]+)\/?$ index.php?param1=$1&param2=$2&param3=$3&param4=$4 [QSA,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\/]+)/([^\/]+)/([^\/]+)\/?$ index.php?param1=$1&param2=$2&param3=$3 [QSA,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\/]+)/([^\/]+)\/?$ index.php?param1=$1&param2=$2 [QSA,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\/]+)\/?$ index.php?param1=$1 [QSA,L]
+
