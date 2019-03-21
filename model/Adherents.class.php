@@ -105,7 +105,7 @@ class Adherents
         }else{
             $Muscufilter = "  " ;
         }
-        $Muscures = $MuscuMaster->ExecuteS("SELECT * FROM adherents LEFT JOIN adherents_inscrit 
+        $Muscures = $MuscuMaster->ExecuteS("SELECT adherents.* , clubs.* FROM adherents LEFT JOIN adherents_inscrit 
                                                 ON  adherents.idAdherents = adherents_inscrit.idAdherents 
                                                 LEFT JOIN clubs ON clubs.idClubs = adherents_inscrit.idClubs
                                                 WHERE 1

@@ -69,12 +69,22 @@
             <td class="text-center"><?php echo $Muscuitem['dateBornAdherents']?></td>
             <td class="text-center"><?php echo ($Muscuitem['genreAdherents'] == 'H' )?'Homme':'Femme'?></td>
             <td class="text-center">
-                <button type="button" class="btn btn-xs btn-info" data-toggle="popover" data-html="true" title="Clubs" data-content="<?php
-                foreach ($Musculs_clubs as $Muscuclub){
-                    $Muscutext .= $Muscuclub['nomClubs'] .' : '.date('d-m-Y' , strtotime($Muscuclub['date_inscription'])).'<br> ' ;
+                <?php
+                if(count($Musculs_clubs) > 0 && $Musculs_clubs != FALSE  ) {
+                    ?>
+                    <button type="button" class="btn btn-xs btn-info" data-toggle="popover" data-html="true"
+                            title="Clubs" data-content="<?php
+                    foreach ($Musculs_clubs as $Muscuclub) {
+                        $Muscutext .= $Muscuclub['nomClubs'] . ' : ' . date('d-m-Y', strtotime($Muscuclub['date_inscription'])) . '<br> ';
+                    }
+                    echo $Muscutext;
+                    ?>">Clubs
+                    </button>
+                    <?php
+                }else{
+                   echo  'Aucun club !' ;
                 }
-                    echo $Muscutext   ;
-                ?>">Clubs</button>
+                ?>
             </td>
             <td class="text-center">
                 <a href="<?php echo __SITE_DIR__.'adherents/'.$Muscuitem['idAdherents'] ; ?>"><button class="btn btn-success btn-xs">Modifier</button></a>
